@@ -1,6 +1,6 @@
-@Portfolio.Server_HostAddress = http://localhost:5235
+@Portfolio.Server_HostAddress = https://localhost:5016
 
-GET {{Portfolio.Server_HostAddress}}/weatherforecast/
+GET {{Portfolio.Server_HostAddress}}/api/project/
 Accept: application/json
 
 ###

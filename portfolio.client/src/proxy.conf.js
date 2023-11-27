@@ -2,9 +2,15 @@ const PROXY_CONFIG = [
   {
     context: [
       "/weatherforecast",
+      "/api/project" // Make sure this is included
     ],
-    target: "http://localhost:5235", // Changed to match the server's port
-    secure: false
+    target: "https://127.0.0.1:5016",
+    secure: false,
+    changeOrigin: true, // Added this line
+    logLevel: "debug", // Added this line
+    pathRewrite: {
+      '^/api': ''
+    }
   }
 ]
 

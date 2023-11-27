@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Portfolio.Server.Controllers
 {
+    [EnableCors()]
     [ApiController]
-    [Route("projects")]
+    [Route("api/project")]
     public class ProjectController : ControllerBase
     {
         private readonly ILogger<Projects> _logger;
