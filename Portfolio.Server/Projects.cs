@@ -8,6 +8,8 @@ namespace Portfolio.Server
 
         public string[] tags { get; set; }
 
+        public string fullPageLink { get; set; }
+
         public string demoLink { get; set; }
 
         public string ghLink { get; set; }

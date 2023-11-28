@@ -29,17 +29,16 @@ describe('ProjectComponent', () => {
   });
 
   it('should retrieve weather forecasts from the server', () => {
-    const mockForecasts = [
-      { date: '2021-10-01', temperatureC: 20, temperatureF: 68, summary: 'Mild' },
-      { date: '2021-10-02', temperatureC: 25, temperatureF: 77, summary: 'Warm' }
+    const mockproject = [
+      { "title": "title", "description": "description", "tags": ["tag1", "tag2"], "demoLink": "demoLink", "ghLink": "ghLink", "imgLink": "imgLink" }, { "title": "title", "description": "description", "tags": ["tag1", "tag2"], "fullPageLink": "fullPageLink", "demoLink": "demoLink", "ghLink": "ghLink", "imgLink": "imgLink" }, { "title": "title", "description": "description", "tags": ["tag1", "tag2"], "demoLink": "demoLink", "ghLink": "ghLink", "imgLink": "imgLink" }, { "title": "title", "description": "description", "tags": ["tag1", "tag2"], "demoLink": "demoLink", "ghLink": "ghLink", "imgLink": "imgLink" }, { "title": "title", "description": "description", "tags": ["tag1", "tag2"], "demoLink": "demoLink", "ghLink": "ghLink", "imgLink": "imgLink" }
     ];
 
     component.ngOnInit();
 
-    const req = httpMock.expectOne('/weatherforecast');
+    const req = httpMock.expectOne('/api/project');
     expect(req.request.method).toEqual('GET');
-    req.flush(mockForecasts);
+    req.flush(mockproject);
 
-    expect(component.forecasts).toEqual(mockForecasts);
+    expect(component.projects).toEqual(mockproject);
   });
 });

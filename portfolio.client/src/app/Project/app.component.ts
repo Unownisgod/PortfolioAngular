@@ -5,9 +5,10 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
-  demolink: string;
-  ghlink: string;
-  imglink: string;
+  fullPageLink: string;
+  demoLink: string;
+  ghLink: string;
+  imgLink: string;
 }
 
 @Component({

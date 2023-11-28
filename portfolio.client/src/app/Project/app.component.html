@@ -3,35 +3,25 @@
 <p>This component demonstrates fetching data from the server.</p>
 
 <p *ngIf="!projects"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
-
-<div class="card" *ngFor="let project of projects">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{ project.title }}</td>
-      <td>{{ project.description }}</td>
-      <td>{{ project.tags }}</td>
-      <td>{{ project.demolink }}</td>
-      <td>{{ project.ghlink }}</td>
-      <td>{{ project.imglink }}</td>
-    </tr>
-  </tbody>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 mb-3" *ngFor="let project of projects">
+      <div class="card">
+        <div class="card-header">
+            {{ project.title }}
+        </div>
+        <div class="card-img">
+            <a href="{{ project.fullPageLink }}"><img src="{{ project.imgLink }}"/></a>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            {{ project.description }}
+          </div>
+        </div>
+        <div class="card-footer">
+            {{ project.tags }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-    <!--    public string description { get; set; }
-
-        public string[] tags { get; set; }
-
-        public string demoLink { get; set; }
-
-        public string ghLink { get; set; }
-
-        public string imgLink { get; set; }
--->
