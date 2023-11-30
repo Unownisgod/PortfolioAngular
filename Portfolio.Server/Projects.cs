@@ -2,9 +2,13 @@ namespace Portfolio.Server
 {
     public class Projects
     {
+        public int id { get; set; }
+
         public string title { get; set; }
 
         public string description { get; set; }
+
+        public string fullDescription { get; set; }
 
         public string[] tags { get; set; }
 

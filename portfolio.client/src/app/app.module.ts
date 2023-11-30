@@ -2,16 +2,30 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { ProjectComponent } from './project/app.component';
+import { ProjectComponent } from './Project/projects.component';
+import { HomeComponent } from './Home/home.component';
+import { Routes, RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'project', component: ProjectComponent },
+];
 
 @NgModule({
   declarations: [
-    ProjectComponent
+    AppComponent,
+    ProjectComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    RouterModule,
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [ProjectComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,6 +22,7 @@ namespace Portfolio.Server.Controllers
             {
                 title = "title",
                 description = "description",
+                fullDescription = "fulldescription",
                 tags = new string[] { "tag1", "tag2" },
                 demoLink = "demoLink",
                 ghLink = "ghLink",
