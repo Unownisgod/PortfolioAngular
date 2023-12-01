@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Project } from './Project';
+import { Project } from '../Project';
 
 @Component({
   selector: 'projects-root',
