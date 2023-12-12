@@ -13,35 +13,38 @@
     <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
   </symbol>
 </svg>
+<div >
 
+  <nav class="navbar sticky-top navbar-expand-lg" [ngClass]="darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'" id="mainNavBar">
 
-<nav class="navbar navbar-expand-lg" [ngClass]="{'navbar-dark bg-dark': darkMode, 'navbar-light bg-light': !darkMode}">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">PortfolioClient</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
-        <a class="nav-link" routerLink="/project">Projects</a>
-        <a class="nav-link" routerLink="/about">About</a>
-        <!--Dark mode selector-->
-        <div class="opacitychange">
-        <svg class="bi m-2 opacity-50 theme-icon" width="1.25em" height="1.25em" (click)="toggleDarkMode()" style="cursor: pointer;">
-            <use [attr.href]="darkMode ? '#moon-stars-fill' : '#sun-fill'" [style.fill]="darkMode ? 'lightgray' : ''"></use>
-        </svg>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">PortfolioClient</a>
+      <button class="navbar-toggler mx-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          <a class="nav-link" routerLink="/project">Projects</a>
+          <a class="nav-link" routerLink="/about">About</a>
+          <!--Dark mode selector-->
         </div>
       </div>
+      <div class="opacitychange">
+        <svg class="bi opacity-50 theme-icon text-align-right me-2" width="1.5em" height="1.5em" (click)="toggleDarkMode()" style="cursor: pointer;">
+          <use [attr.href]="darkMode ? '#moon-stars-fill' : '#sun-fill'" [style.fill]="darkMode ? 'lightgray' : ''"></use>
+        </svg>
+      </div>
+      <div class="text-align-right">
+        <a *ngIf="darkMode" href="https://www.linkedin.com/in/david-perez-cruz-41286a272/"><img src="../assets/Images/Navbar/LnLogoDark.png" title="Linkedin" style="width: 32px; height: 32px;" class="me-2 ms-2"><img /></a>
+        <a *ngIf="darkMode" href="https://github.com/Unownisgod"><img src="../assets/Images/Navbar/ghLogoDark.png" title="GitHub" style="width: 32px; height: 32px;" class="me-2 ms-2" /></a>
+        <a *ngIf="!darkMode" href="https://www.linkedin.com/in/david-perez-cruz-41286a272/"><img src="../assets/Images/Navbar/LnLogoLight.png" title="Linkedin" style="width: 32px; height: 32px;" class="me-2 ms-2"><img /></a>
+        <a *ngIf="!darkMode" href="https://github.com/Unownisgod"><img src="../assets/Images/Navbar/ghLogoLight.png" title="GitHub" style="width: 32px; height: 32px;" class="me-2 ms-2" /></a>
+      </div>
     </div>
-    <div class="text-align-right">
-      <a *ngIf="darkMode" href="https://www.linkedin.com/in/david-perez-cruz-41286a272/"><img src="../assets/Images/Navbar/LnLogoDark.png" title="Linkedin" style="width: 32px; height: 32px;" class="me-2 ms-2"><img /></a>
-      <a *ngIf="darkMode" href="https://github.com/Unownisgod"><img src="../assets/Images/Navbar/ghLogoDark.png" title="GitHub" style="width: 32px; height: 32px;" class="me-2 ms-2" /></a>
-      <a *ngIf="!darkMode" href="https://www.linkedin.com/in/david-perez-cruz-41286a272/"><img src="../assets/Images/Navbar/LnLogoLight.png" title="Linkedin" style="width: 32px; height: 32px;" class="me-2 ms-2"><img /></a>
-      <a *ngIf="!darkMode" href="https://github.com/Unownisgod"><img src="../assets/Images/Navbar/ghLogoLight.png" title="GitHub" style="width: 32px; height: 32px;" class="me-2 ms-2" /></a>
-    </div>
-  </div>
-</nav>
+  </nav>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+
+</div>
