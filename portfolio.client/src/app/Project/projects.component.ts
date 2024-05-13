@@ -23,7 +23,7 @@ export class ProjectComponent implements OnInit {
   }
 
   getProjects() {
-    this.http.get<any>('/api/project').subscribe(
+    this.http.get<any>('/api/project/GetBasicData').subscribe(
       (result) => {
         this.projects = result;
       },
