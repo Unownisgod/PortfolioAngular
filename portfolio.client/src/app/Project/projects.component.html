@@ -4,14 +4,14 @@
 
 <p *ngIf="!projects"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
 <div class="container">
-  <div class="row">
+  <div class="row" data-masonry='{"percentPosition": true }'>
     <div class="col-sm-4 mb-3" *ngFor="let project of projects">
       <div class="card">
         <div class="card-header">
             {{ project.title }}
         </div>
         <div class="card-img">
-            <a href="{{ project.fullPageLink }}"><img src="{{ project.imgLink }}"/></a>
+            <a href="{{ project.fullPageLink }}"><img class="img-fluid" src="../assets/Images/Projects/{{ project.title.split(' ').join('-') }}/main.png"/></a>
         </div>
         <hr />
         <div class="card-body">
