@@ -73,5 +73,52 @@ namespace Portfolio.Server.Controllers
             }
             return projects;
         }
+        [HttpGet(Name = "GetProjectsBasicDataById")]
+        public Project GetBasicDataById(int id)
+        {
+            XmlDocument document = new XmlDocument();
+            document.Load("Data/Projects.xml");
+            var root = document.DocumentElement;
+            XmlNode node = root.ChildNodes[id - 1];
+            var name = node.ChildNodes[0].InnerText;
+            var description = node.ChildNodes[1].InnerText;
+            var tags = node.ChildNodes[3].ChildNodes;
+            List<string> tagList = new List<string>();
+
+            foreach (XmlNode tag in tags)
+            {
+                var test = tag.InnerText;
+                tagList.Add(tag.InnerText);
+            }
+
+            Project project = new Project(id, name, description, tagList);
+            return project;
+        }
+
+        [HttpGet(Name = "GetAllProjectsDataById")]
+        public Project GetAllDataById(int id)
+        {
+            XmlDocument document = new XmlDocument();
+            document.Load("Data/Projects.xml");
+            var root = document.DocumentElement;
+            XmlNode node = root.ChildNodes[id - 1];
+            var name = node.ChildNodes[0].InnerText;
+            var description = node.ChildNodes[1].InnerText;
+            var fullDescription = node.ChildNodes[2].InnerText;
+            var tags = node.ChildNodes[3].ChildNodes;
+            var demoLink = node.ChildNodes[4].InnerText;
+            var ghLink = node.ChildNodes[5].InnerText;
+            List<string> tagList = new List<string>();
+
+            foreach (XmlNode tag in tags)
+            {
+                var test = tag.InnerText;
+                tagList.Add(tag.InnerText);
+            }
+
+            Project project = new Project(id, name, description, fullDescription, tagList, demoLink, ghLink);
+            return project;
+        }
+
     }
 }

@@ -19,7 +19,6 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit() {
     this.getProjects();
-    this.readfromcookie();
   }
 
   getProjects() {
@@ -32,19 +31,6 @@ export class ProjectComponent implements OnInit {
       }
     );
   }
-  toggleDarkMode() {
-    this.darkMode = !this.darkMode;
-    document.cookie = "darkMode=" + this.darkMode;
-    if (this.darkMode) {
-      this.renderer.addClass(this.document.body, 'bg-dark');
-      this.renderer.addClass(this.document.body, 'text-white');
-    } else {
-      this.renderer.removeClass(this.document.body, 'bg-dark');
-      this.renderer.removeClass(this.document.body, 'text-white');
-    }
-  }
-  readfromcookie() {
-    this.darkMode = document.cookie.includes("darkMode=true");
-  }
+
   title = 'Projects';
 }

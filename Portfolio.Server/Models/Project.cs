@@ -3,10 +3,6 @@ namespace Portfolio.Server.Models
 {
     public class Project
     {
-        private string name;
-        private string v;
-        private List<string> tagList;
-
         public Project()
         {
 
@@ -14,7 +10,7 @@ namespace Portfolio.Server.Models
 
         public Project(int id, string title, string description, List<string> tagList)
         {
-            this.id = id;
+            this.Id = id;
             this.title = title;
             this.description = description;
             this.tags = tagList;
@@ -22,7 +18,7 @@ namespace Portfolio.Server.Models
 
         public Project(int id, string title, string description, string fullDescription, List<string> tags, string demoLink, string ghLink)
         {
-            this.id = id;
+            this.Id = id;
             this.title = title;
             this.description = description;
             this.fullDescription = fullDescription;
@@ -30,7 +26,7 @@ namespace Portfolio.Server.Models
             this.demoLink = demoLink;
             this.ghLink = ghLink;
         }
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public string title { get; set; }
 

@@ -6,18 +6,21 @@ import { ProjectComponent } from './Project/projects.component';
 import { HomeComponent } from './Home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { SchoolWebappComponent } from './school-webapp/school-webapp.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'project', component: ProjectComponent },
+  { path: 'projects/SchoolWebapp', component: SchoolWebappComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectComponent,
-    HomeComponent
+    HomeComponent,
+    SchoolWebappComponent
   ],
   imports: [
     RouterModule,
