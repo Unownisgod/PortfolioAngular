@@ -1,15 +1,14 @@
-import { DOCUMENT } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, Inject, Renderer2 } from '@angular/core';
 import { Project } from '../Project';
-import { MarkdownService } from 'ngx-markdown';
+import { DOCUMENT } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-shcool-webapp',
-  templateUrl: './school-webapp.component.html',
-  styleUrls: ['./school-webapp.component.css']
+  selector: 'app-stock-simulator',
+  templateUrl: './stock-simulator.component.html',
+  styleUrls: ['./stock-simulator.component.css']
 })
-export class SchoolWebappComponent {
+export class StockSimulatorComponent {
   project!: Project;
   constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document, private http: HttpClient) { }
   darkMode = false;
@@ -19,7 +18,7 @@ export class SchoolWebappComponent {
   }
 
   getProjects() {
-    this.http.get<any>('/api/project/GetAllDataById?id=1').subscribe(
+    this.http.get<any>('/api/project/GetAllDataById?id=3').subscribe(
       (result) => {
         this.project = result;
       },
@@ -28,4 +27,5 @@ export class SchoolWebappComponent {
       }
     );
   }
+
 }
