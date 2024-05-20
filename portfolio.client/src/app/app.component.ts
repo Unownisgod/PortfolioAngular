@@ -18,7 +18,7 @@ export class AppComponent {
 
   toggleDarkMode() {
     this.darkMode = !this.darkMode;
-    document.cookie = "darkMode=" + this.darkMode;
+    document.cookie = "darkMode=" + this.darkMode + "; path=/";
     this.updateBodyClass();
   }
   readfromcookie() {
