@@ -27,10 +27,18 @@
         </button>
       </div>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-7">
       <div class="markdown-container">
         <markdown ngPreserveWhitespaces [data]="project.fullDescription" [inline]="true" />
       </div>
+    </div>
+    <div class="col-sm-1">
+      <p>
+        <a href="{{ project?.ghLink }}">Github</a>
+      </p>
+      <p>
+        <a href="{{ project?.demoLink }}">Demo</a>
+      </p>
     </div>
   </div>
 </div>
